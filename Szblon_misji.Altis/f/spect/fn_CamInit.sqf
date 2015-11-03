@@ -215,11 +215,9 @@ f_cam_camera cameraEffect ["internal","back"];
 f_cam_camera camSetTarget f_cam_fakecamera;
 f_cam_camera camSetFov 1.2;
 f_cam_freecamera camSetFov 1.2;
-f_cam_zeusKey = 21;
-if( count (actionKeys "curatorInterface") > 0 ) then
-{
-    f_cam_zeusKey = (actionKeys "curatorInterface") select 0;
-};
+//f_cam_zeusKey = 21;
+//if( count (actionKeys "curatorInterface") > 0 ) then
+// {    f_cam_zeusKey = (actionKeys "curatorInterface") select 0;   };
 f_cam_MouseMoving = false;
 cameraEffectEnableHUD true;
 showCinemaBorder false;
