@@ -76,3 +76,33 @@ waitUntil{(player getVariable ["f_var_assignGear_done", false])};
 [] execVM "f\briefing\f_orbatNotes.sqf";
 [] execVM "f\briefing\f_loadoutNotes.sqf";
 [] execVM "f\Safezone\safety_init.sqf";
+
+//Ponowna aktywacja TFR-a
+if(alive _unit) then {
+
+	[_unit, false] call TFAR_fnc_forceSpectator;
+} 
+else {
+	[_unit, true] call TFAR_fnc_forceSpectator;
+};
+
+// Ponowne wywolanie TFR init oraz nadanie odpowiedniego radia
+waitUntil{!isNil "f_var_radios"};
+
+if(f_var_radios != 0) then {
+
+  switch (f_var_radios) do {
+  // ACRE
+  case 1: {
+    [] execVM "f\radios\acre\acre_init.sqf";
+  };
+  // TFR
+  case 2: {
+    [] execVM "f\radios\tfr\tfr_init.sqf";
+  };
+  // acre2
+  case 3: {
+    [] execVM "f\radios\acre2\acre2_init.sqf";
+  };
+  };
+};
