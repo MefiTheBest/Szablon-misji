@@ -41,20 +41,6 @@ switch (_button) do {
         _this spawn {
             [] call F_fnc_ForceExit;
             f_cam_VirtualCreated = nil;
-            switch (f_var_radios) do {
-                // ACRE
-                case 1: {
-                    [false] call acre_api_fnc_setSpectator;
-                };
-                // TFR
-                case 2: {
-                    [player, false] call TFAR_fnc_forceSpectator;
-                    diag_log "TFR wylaczenie dla SPEC";    //LOG do RPT
-                };
-                case 3: {
-                    [false] call acre_api_fnc_setSpectator;
-                };
-            };
             forceRespawn player;
         };
     };
