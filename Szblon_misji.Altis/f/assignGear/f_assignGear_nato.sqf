@@ -28,22 +28,25 @@
 //		msamag		- amunicyjny AA
 //		hsamg		- strzelec HAA - nieużywany
 //		hsamag		- amunicyjny HAA - nieużywany
-//		sn			- najper -nieuzywany
-//		sp			- obserwator - nieużywany
-//		vc			- dowódca pojazdu
-//		vg			- strzelec w pojeździe
-//		vd			- kierowca pojazdu (mechanik)
-//		pp			- pilot
-//		pcc			- co-pilot (mechanik)
-//		pc			- załoga śmigłowców - mało stosowane
-//		eng			- mechanik
+//		sn		- najper -nieuzywany
+//		sp		- obserwator - nieużywany
+//		vc		- dowódca pojazdu
+//		vg		- strzelec w pojeździe
+//		vd		- kierowca pojazdu (mechanik)
+//		pp		- pilot
+//		pcc		- co-pilot (mechanik)
+//		pc		- załoga śmigłowców - mało stosowane
+//		eng		- mechanik
 //		engm		- saper
-//		uav			- RTO/FAC
-//		div    		- siły specjalne
-//		r 			- strzelec
-//		car			- strzelec (karabin krótki)
-//		smg			- strzelec smg
-//		ps			- pilot samolotu
+//		uav		- RTO/FAC
+//		divc		- dowódca drużyny specjalnej
+//		divr		- strzelec AT drużyny specjalnej
+//		divs		- saper drużyny specjalnej
+//		divm		- medyk drużyny specjalnej
+//		r 		- strzelec
+//		car		- strzelec (karabin krótki)
+//		smg		- strzelec smg
+//		ps		- pilot samolotu
 //
 //		crate_small	- Mała skrzynka z amunicją (dla teamu)
 //		crate_med	- średnia skrzynka z amunicją (dla sekcji)
@@ -885,18 +888,85 @@ switch (_typeofUnit) do
         _unit addMagazines ["Laserbatteries",2];
 	};
 
-// LOADOUT: Diver
-	case "div":
+
+// LOADOUT: Dowódca Sił Specjalnych
+	case "divc":
 	{
 		_unit addmagazines [_diverMag1,4];
 		_unit addmagazines [_diverMag2,3];
 		_unit addweapon _diverWep;
-		_unit addmagazines [_grenade,3];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines "SmokeShellRed";
+		_unit addmagazines "SmokeShellGreen";
+		_unit addmagazines "SmokeShellPurple";
+		_unit addmagazines "SmokeShellBlue";
+		_unit addmagazines "SmokeShellYellow";
+		_unit addmagazines [_smokegrenade,3];
+		_unit addMagazines ["Laserbatteries",2];
+		_unit addWeapon "UK3CB_BAF_Soflam_Laserdesignator";
+		_attachments = [_attach1,_scope1,_silencer1];
+		["divc"] call _backpack;
+	};
+
+// LOADOUT: Strzelec AT Sił Specjalnych
+	case "divr":
+	{
+		_unit addmagazines [_diverMag1,4];
+		_unit addmagazines [_diverMag2,3];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines "SmokeShellRed";
+		_unit addmagazines "SmokeShellGreen";
+		_unit addmagazines "SmokeShellPurple";
+		_unit addmagazines "SmokeShellBlue";
+		_unit addmagazines "SmokeShellYellow";
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
 		_unit addmagazines [_smokegrenade,3];
 		_attachments = [_attach1,_scope1,_silencer1];
-		["div"] call _backpack;
+		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag,1];
+		_unit addweapon _RAT;
+		["divr"] call _backpack;
+	};
+
+// LOADOUT: Saper Sił Specjalnych
+	case "divs":
+	{
+		_unit addmagazines [_diverMag1,4];
+		_unit addmagazines [_diverMag2,3];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines "SmokeShellRed";
+		_unit addmagazines "SmokeShellGreen";
+		_unit addmagazines "SmokeShellPurple";
+		_unit addmagazines "SmokeShellBlue";
+		_unit addmagazines "SmokeShellYellow";
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,3];
+		_attachments = [_attach1,_scope1,_silencer1];
+		["divs"] call _backpack;
+	};
+
+// LOADOUT: Medyk Sił Specjalnych
+	case "divm":
+	{	
+		_unit addmagazines [_diverMag1,4];
+		_unit addmagazines [_diverMag2,3];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines "SmokeShellRed";
+		_unit addmagazines "SmokeShellGreen";
+		_unit addmagazines "SmokeShellPurple";
+		_unit addmagazines "SmokeShellBlue";
+		_unit addmagazines "SmokeShellYellow";
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,3];
+		_attachments = [_attach1,_scope1,_silencer1];
+		["divm"] call _backpack;
 	};
 
 // LOADOUT: RIFLEMAN
