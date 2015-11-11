@@ -273,7 +273,7 @@ _APmine2 = "APERSMine_Range_Mag";
 
 _light = [];
 _heavy =  ["eng","engm"];
-_diver = ["div"];
+_diver = ["divc","divr","divs","divm"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
