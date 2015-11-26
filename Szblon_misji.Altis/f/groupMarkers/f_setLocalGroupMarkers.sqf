@@ -257,8 +257,8 @@ switch (_unitfaction) do
 		["GrpFIA_MSAM1",  3, "SAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_HSAM1",  3, "HSAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ST1",  4, "ST1", "ColorOrange"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT1",  4, "SF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT2",  4, "SF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT1",  4, "STF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT2",  4, "STF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
  		["GrpFIA_IFV1",  7, "Wiking 1-1", "ColorRed"] spawn f_fnc_localGroupMarker;
@@ -322,8 +322,8 @@ switch (_unitfaction) do
 		["GrpFIA_MSAM1",  3, "SAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_HSAM1",  3, "HSAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ST1",  4, "ST1", "ColorOrange"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT1",  4, "SF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT2",  4, "SF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT1",  4, "STF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT2",  4, "STF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
  		["GrpFIA_IFV1",  7, "Wiking 1-1", "ColorRed"] spawn f_fnc_localGroupMarker;
@@ -387,8 +387,8 @@ switch (_unitfaction) do
 		["GrpFIA_MSAM1",  3, "SAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_HSAM1",  3, "HSAM", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ST1",  4, "ST1", "ColorOrange"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT1",  4, "SF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DT2",  4, "SF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT1",  4, "STF1", "ColorBlack"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DT2",  4, "STF2", "ColorBlack"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
  		["GrpFIA_IFV1",  7, "Wiking 1-1", "ColorRed"] spawn f_fnc_localGroupMarker;
