@@ -39,7 +39,10 @@
 //		eng			- mechanik
 //		engm		- saper
 //		uav			- RTO/FAC
-//		div    		- siły specjalne
+//		divc    	- dowódca sił specjalnych
+//		divr    	- strzelec AT sił specjalnych
+//		divs    	- saper sił specjalnych
+//		divm    	- medyk sił specjalnych
 //		r 			- strzelec
 //		car			- strzelec (karabin krótki)
 //		smg			- strzelec smg
@@ -275,7 +278,7 @@ _APmine2 = "APERSMine_Range_Mag";
 
 _light = [];
 _heavy =  ["eng","engm"];
-_diver = ["div"];
+_diver = ["divc","divr","divs","divm"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
@@ -885,19 +888,64 @@ switch (_typeofUnit) do
         _unit addMagazines ["Laserbatteries",2];
 	};
 
-// LOADOUT: Diver
-	case "div":
+// LOADOUT: Dowódca sil specjalnych
+	case "divc":
 	{
 		_unit addmagazines [_diverMag1,4];
-		_unit addmagazines [_diverMag2,3];
 		_unit addweapon _diverWep;
-		_unit addmagazines [_grenade,3];
+		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
-		_unit addmagazines [_smokegrenade,3];
+		_unit addmagazines [_smokegrenade,2];
 		_attachments = [_attach1,_scope1,_silencer1];
-		["div"] call _backpack;
+		_unit linkItem "ItemGPS";
+		["divc"] call _backpack;
 	};
+
+// LOADOUT: Medyk sil specjalnych
+	case "divm":
+	{	
+		_unit addmagazines [_diverMag1,4];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,2];
+		_attachments = [_attach1,_scope1,_silencer1];
+		_unit linkItem "ItemGPS";
+		["divm"] call _backpack;
+	};
+
+// LOADOUT: Saper sil specjalnych
+	case "divs":
+	{
+		_unit addmagazines [_diverMag1,4];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,2];
+		_attachments = [_attach1,_scope1,_silencer1];
+		_unit linkItem "ItemGPS";
+		["divs"] call _backpack;
+	};
+	
+// LOADOUT: Strzelec AT sil specjalnych
+	case "divr":
+	{
+		_unit addmagazines [_diverMag1,4];
+		_unit addweapon _diverWep;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,2];
+		_attachments = [_attach1,_scope1,_silencer1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag,1];
+		_unit addweapon _RAT;
+		_unit linkItem "ItemGPS";
+		["divr"] call _backpack;
+	};
+
 
 // LOADOUT: RIFLEMAN
 	case "r":
